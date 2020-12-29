@@ -14,10 +14,22 @@ function b() {
 b();
 */
 
-function d() {
-    return new Promise(resolve => {
-        setTimeout(() => {resolve("resolved");}, 1000);
-    });
+let trigger = () => {}
+var button = document.getElementById("button");
+button.onclick = () => { 
+    console.log("button clicked");
+    trigger();
+};
+
+
+async function d() {
+    //while (true) {
+        await new Promise((resolve) => {
+            trigger = resolve;
+        });
+        return "d terminated";
+    //}
+    
 }
 
 list = [0];

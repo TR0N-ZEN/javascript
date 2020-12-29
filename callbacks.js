@@ -3,7 +3,7 @@ function loadAsset(url, type, callback) {
     xhr.open('GET', url);
     xhr.responseType = type;
     xhr.onload = function() { //xhr.onload is called if the XHR was answered and the answer arrived at the client executing this scipt
-    callback(xhr.response); //calling the the function which is thrird argument
+        callback(xhr.response); //calling the the function which is thrird argument
     };
     xhr.send();
 }
