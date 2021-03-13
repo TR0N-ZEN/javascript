@@ -14,14 +14,20 @@ function b() {
 b();
 */
 
+
 let trigger = () => {}
 var button = document.getElementById("button");
+var div = document.getElementById("div");
 button.onclick = () => { 
     console.log("button clicked");
+    //resolve();
     trigger();
 };
-
-
+div.onclick = (container) => {
+    console.log(container.target.attributes.id.name);
+    console.log("div clicked");
+    setTimeout(() => {trigger();},2000);
+}
 async function d() {
     //while (true) {
         await new Promise((resolve) => {
@@ -39,9 +45,9 @@ async function c(x) {
     let y = await d();
     console.log(y);
     if (x < 20) {
-        list[++x] = await c(x);
+       list[++x] = await c(x);
     }
-    //if x == 20 this will be happening for the first time
+    //if (x == 20) this will be happening for the first time
     return x;
 }
 

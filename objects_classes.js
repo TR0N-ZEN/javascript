@@ -21,3 +21,4 @@ var object1_of_class1 = new class1("light", "soft");
 //to add properties and methods to a class and to all objects of a class you must modify the object constructor inside the class. The following code shows how:
 class1.prototype.property3 = "invisible";
 class1.prototype.method2 = () => {return "method2 of object from class1"}
+//this is not very beautiful and should be considered to be solved with inheritance
